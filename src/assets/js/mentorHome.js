@@ -3,6 +3,7 @@ var app = angular.module("app");
 
 app.controller("mentorHome", function($scope, $window, $cookies, $http)
 {
+    // Empty Object for View
     $scope.mentorData = {};
 
     $scope.goHome = function()
@@ -20,6 +21,7 @@ app.controller("mentorHome", function($scope, $window, $cookies, $http)
         $window.location.href = "http://localhost:3000/#!/teamPerformance";
     }
     
+    // Will be Called when /mentorHome is initialized
     $scope.mentorInit = function()
     {
         $scope.mentorData.id = $cookies.get('mentor');
