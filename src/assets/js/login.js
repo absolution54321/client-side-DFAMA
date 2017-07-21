@@ -3,20 +3,20 @@ var app = angular.module("app");
 app.controller("login", function($scope, $location) {
 
   $scope.data={};
-
   //console.log(data.user);
 
 
   $scope.clicked = function(){
-      //  window.location = "#!/page2.html";
-      //$location.path('/page1.html');
-        // $location.url('http://localhost/page2.js');
-        console.log($scope.data);
-       
-       // $window.location.href = 'http://localhost:3000/#!/studentHome';
+       console.log($scope.data);
 
-
-        $location.path("/studentHome");
+       //routing according to login
+       if($scope.data.result==1){
+                $location.path("/adminHome");
+       }else if($scope.data.result==2){
+                $location.path("/studentHome");
+       }else if($scope.data.result==3){
+                 $location.path("/mentorHome");
+       }
  };
 
 });
