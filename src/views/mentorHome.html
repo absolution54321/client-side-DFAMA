@@ -55,75 +55,75 @@
       </a>      
     </div> -->
     <section class="content-inner container">
-        <div class="jumbotron">
+        <div class="jumbotron" ng-init="mentorInit()">
             <form class="form-horizontal">
             <div class="form-group">
                 <label class="control-label col-sm-2">MentorID:</label>
                 <div class="col-sm-5" style="color: black" href="#/">
-                    <label class="control-label col-sm-2" id="mentorId">SNEHAL</label>
+                    <label class="control-label col-sm-2" id="mentorId" ng-model="mentorData.id">{{mentorData.id}}</label>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-2">UserName:</label>
                 <div class="col-sm-5" style="color: black" href="#/">
-                    <label class="control-label col-sm-2" id="username"></label>
+                    <label class="control-label col-sm-2" id="username" ng-model="mentorData.userName">{{mentorData.userName}}</label>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-2">Name:</label>
                 <div class="col-sm-5" style="color: black" href="#/">
-                    <label class="control-label col-sm-2" id="name"></label>
+                    <label class="control-label col-sm-2" id="name" ng-model="mentorData.name">{{mentorData.name}}</label>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-2">Year Of Experiance:</label>
                 <div class="col-sm-5" style="color: black" href="#/">
-                    <label class="control-label col-sm-2" id="yoe"></label>
+                    <label class="control-label col-sm-2" id="yoe" ng-model="mentorData.yoe">{{mentorData.yoe}}</label>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-2">Contact Number:</label>
                 <div class="col-sm-5" style="color: black" href="#/">
-                    <label class="control-label col-sm-2" id="contact"></label>
+                    <label class="control-label col-sm-2" id="contact" ng-model="mentorData.contact">{{mentorData.contact}}</label>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-2">Company:</label>
                 <div class="col-sm-5" style="color: black" href="#/">
-                    <label class="control-label col-sm-2" id="company"></label>
+                    <label class="control-label col-sm-2" id="company" ng-model="mentorData.company">{{mentorData.company}}</label>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-2">Area Of Experiance:</label>
                 <div class="col-sm-5" style="color: black" href="#/">
-                    <label class="control-label col-sm-2" id="aoe"></label>
+                    <label class="control-label col-sm-2" id="aoe" ng-model="mentorData.aoe">{{mentorData.aoe}}</label>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-2">Batch:</label>
                 <div class="col-sm-5" style="color: black" href="#/">
-                    <label class="control-label col-sm-2" id="batch"></label>
+                    <label class="control-label col-sm-2" id="batch" ng-model="mentorData.batch">{{mentorData.batch}}</label>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-2">Email:</label>
                 <div class="col-sm-5" style="color: black" href="#/">
-                    <label class="control-label col-sm-2" id="MentorEmail"></label>
+                    <label class="control-label col-sm-2" id="MentorEmail" ng-model="mentorData.email">{{mentorData.email}}</label>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-2">Team Number:</label>
                 <div class="col-sm-5" style="color: black" href="#/">
-                    <label class="control-label col-sm-2" id="MentorTeamNo"></label>
+                    <label class="control-label col-sm-2" id="MentorTeamNo" ng-model="mentorData.teamNo">{{mentorData.teamNo}}</label>
                 </div>
             </div>
 
