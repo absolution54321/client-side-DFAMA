@@ -57,5 +57,11 @@ app.config(function($routeProvider) {
         "controller": "studentHome"
     });
 
+    //ABOUT US
+     $routeProvider.when("/aboutUs", {
+        "templateUrl": "./src/views/aboutUs.html",
+        "controller": "aboutUs"
+    });
+
 
 });
