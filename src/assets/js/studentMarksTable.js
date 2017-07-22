@@ -3,7 +3,7 @@ var app = angular.module("app");
 
 app.controller("studentMarksTable", function($scope,$location,$http) {
 
-    // Empty Object for View
+    // Empty Object for Marks
     $scope.studentMarks = {};
     
     $scope.goToStudentAgendaPage=function(){
@@ -18,7 +18,7 @@ app.controller("studentMarksTable", function($scope,$location,$http) {
     $scope.studentMarksInit = function()
     {
         $scope.studentMarks.id = $cookies.get('student');
-        console.log("Hi student");   
+        console.log("student");   
         
         $scope.jsonObject = { "studentId": $cookies.get('studentId') }
         
