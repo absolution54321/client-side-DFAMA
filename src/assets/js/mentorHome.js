@@ -1,7 +1,7 @@
 var app = angular.module("app");
 
 
-app.controller("mentorHome", function($scope, $window, $cookies, $http)
+app.controller("mentorHome", function($scope, $window, $cookies, $http, $location)
 {
     // Empty Object for View
     $scope.mentorData = {};
@@ -51,6 +51,12 @@ app.controller("mentorHome", function($scope, $window, $cookies, $http)
               console.log(err);
             });        
  };  
+
+    $scope.performLogOut = function(){
+        $cookies.remove("mentorId");
+        $cookies.remove("mentorUserName");
+        $location.path("/");
+    };
 
 
 });

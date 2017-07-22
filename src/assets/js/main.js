@@ -71,7 +71,7 @@ app.run(function($location, $rootScope, $cookies, $http)
     $rootScope.$on("$locationChangeStart", function(event, next, current)
     {
         console.log(new Date());
-        var userId = $cookies.getObject('userId');
+        var userId = $cookies.getObject('mentorId');
 
         if(userId == undefined)
             {
