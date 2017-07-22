@@ -1,8 +1,9 @@
 var app = angular.module("app");
 
 
-app.controller("mentorAgenda", function($scope, $window)
+app.controller("mentorAgenda", function($scope, $window,$compile)
 {
+    $scope.posts ={};
 
     $scope.fetch = function()
     {
@@ -22,5 +23,11 @@ app.controller("mentorAgenda", function($scope, $window)
     $scope.goTeam = function()
     {
         $window.location.href = "http://localhost:3000/#!/teamPerformance";
-    }
+    };
+
+    $scope.setAgenda = function(){
+        console.log($scope.posts.agendaText);
+        var newEle = angular.element('<div>$scope.posts.agendaText</div>');
+        $compile(newEle)($scope);
+    };
 });
