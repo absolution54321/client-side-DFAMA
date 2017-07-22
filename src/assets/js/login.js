@@ -35,7 +35,7 @@ app.controller("login", function($scope, $location, $http, $cookies) {
                   {
                     $location.path("/mentorHome");
                     
-                    $cookies.put('mentorId', response.data[0].mentorId);
+                    $cookies.put('userId', response.data[0].mentorId);
                     $cookies.put('mentorUserName', response.data[0].mentorUsername);
                   }
               }
