@@ -13,7 +13,13 @@ $scope.goToStudentMarksTablePage=function(){
   
   $scope.goTostudentFeedbackForm=function(){
       $location.path("/studentFeedbackForm");
-  }
+  };
+
+  $scope.performLogOut = function(){
+        $cookies.remove("mentorId");
+        $cookies.remove("mentorUserName");
+        $location.path("/");
+    };
 });
 
 
