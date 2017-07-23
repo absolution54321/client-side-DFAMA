@@ -14,12 +14,16 @@ app.controller("login", function($scope, $location, $http, $cookies) {
                           "UserType":$scope.data.result
                          };
         
-        var url = "http://localhost:3010/";
+        var url = "http://localhost:3002/";
         var hpromise = $http.post(url, $scope.jsonObject);
         
         hpromise.then(function(response) 
         {
+<<<<<<< HEAD
         //    console.log(response.data[0].mentorId);
+=======
+            //console.log(response.data[0].mentorId);
+>>>>>>> eb86540c10891d6e9997e8fcdb864cc3a05c9a08
             //routing according to login
               if(response.data.length>0)
               {
@@ -34,6 +38,11 @@ app.controller("login", function($scope, $location, $http, $cookies) {
                   else if($scope.data.result==2)
                   {
                     $location.path("/studentHome");
+                    
+                    $cookies.put('userId', response.data[0].studentId);
+                    $cookies.put('studentUserName', response.data[0].studentUsername);
+                    console.log($cookies);
+
                   }
                   else if($scope.data.result==3)
                   {
