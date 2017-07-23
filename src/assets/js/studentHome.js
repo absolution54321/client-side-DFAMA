@@ -4,40 +4,38 @@ var app = angular.module("app");
 
 
 
-app.controller("studentHome", function($scope,$location, $cookies, $http) {
+app.controller("studentHome", function ($scope, $location, $cookies, $http) {
 
-    $scope.goToStudentAgendaPage=function(){
-          $location.path("/page2");
+    $scope.goToStudentAgendaPage = function () {
+        $location.path("/studentAgenda");
     };
 
     $scope.studentData = {};
 
-$scope.goToStudentMarksTablePage=function(){
-   $location.path("/studentMarksTable");
-};
-  
-  $scope.goTostudentFeedbackForm=function(){
-      $location.path("/studentFeedbackForm");
-  };
+    $scope.goToStudentMarksTablePage = function () {
+        $location.path("/studentMarksTable");
+    };
 
-  $scope.performLogOut = function(){
+    $scope.goTostudentFeedbackForm = function () {
+        $location.path("/studentFeedbackForm");
+    };
+
+    $scope.performLogOut = function () {
         $cookies.remove("mentorId");
         $cookies.remove("mentorUserName");
         $location.path("/");
     };
 
-    $scope.studentInit = function()
-    {
+    $scope.studentInit = function () {
         //$scope.mentorData.id = $cookies.get('mentor');
         //console.log("Hi");   
-        
+
         $scope.jsonObject = { "studentId": $cookies.get('userId') }
-        
+
         var url = "http://localhost:3002/student";
         var hpromise = $http.post(url, $scope.jsonObject);
-        
-        hpromise.then(function(response) 
-        {
+
+        hpromise.then(function (response) {
             //routing according to login
             console.log(response);
             $scope.studentData.id = $cookies.get('userId');
@@ -58,11 +56,15 @@ $scope.goToStudentMarksTablePage=function(){
             $scope.studentData.parentContact = response.data[0].parentContact;
 
 
-        }).catch(function(err) 
-            {
-              console.log(err);
-            });        
- };  
+        }).catch(function (err) {
+            console.log(err);
+        });
+    };
+    $scope.performLogOut = function () {
+        $cookies.remove("userId");
+        $cookies.remove("studentUserName");
+        $location.path("/");
+    };
 });
 
 

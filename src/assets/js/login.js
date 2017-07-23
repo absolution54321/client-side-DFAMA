@@ -19,11 +19,9 @@ app.controller("login", function($scope, $location, $http, $cookies) {
         
         hpromise.then(function(response) 
         {
-<<<<<<< HEAD
+
         //    console.log(response.data[0].mentorId);
-=======
             //console.log(response.data[0].mentorId);
->>>>>>> eb86540c10891d6e9997e8fcdb864cc3a05c9a08
             //routing according to login
               if(response.data.length>0)
               {
