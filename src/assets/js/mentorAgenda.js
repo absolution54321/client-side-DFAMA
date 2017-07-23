@@ -32,4 +32,10 @@ app.controller("mentorAgenda", function($scope, $window,$compile)
         
 
     };
+
+    $scope.performLogOut = function(){
+        $cookies.remove("userId");
+        $cookies.remove("mentorUserName");
+        $location.path("/");
+    };
 });

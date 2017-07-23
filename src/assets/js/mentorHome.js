@@ -54,7 +54,7 @@ app.controller("mentorHome", function($scope, $window, $cookies, $http, $locatio
  };  
 
     $scope.performLogOut = function(){
-        $cookies.remove("mentorId");
+        $cookies.remove("userId");
         $cookies.remove("mentorUserName");
         $location.path("/");
     };
