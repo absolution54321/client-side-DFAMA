@@ -33,6 +33,7 @@ app.controller("login", function($scope, $location, $http, $cookies) {
                     
                     $cookies.put('userId', response.data[0].studentId);
                     $cookies.put('studentUserName', response.data[0].studentUsername);
+                    console.log($cookies);
 
                   }
                   else if($scope.data.result==3)
