@@ -3,7 +3,7 @@ var app = angular.module("app");
 
 app.controller("mentorAgenda", function($scope, $window,$compile)
 {
-    $scope.posts ={};
+    $scope.postsList =[];
 
     $scope.fetch = function()
     {
@@ -26,8 +26,10 @@ app.controller("mentorAgenda", function($scope, $window,$compile)
     };
 
     $scope.setAgenda = function(){
-        console.log($scope.posts.agendaText);
-        var newEle = angular.element('<div>$scope.posts.agendaText</div>');
-        $compile(newEle)($scope);
+        // console.log($scope.posts.agendaText);
+        // var newEle = angular.element('<div>$scope.posts.agendaText</div>');
+        // $compile(newEle)($scope);
+        
+
     };
 });
