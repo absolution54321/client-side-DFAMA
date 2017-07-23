@@ -21,7 +21,7 @@ app.controller("teamPerformance", function ($scope, $window, $http, $cookies, $l
 
         //console.log($scope.jsonObj.mentorId);
 
-        var url = "http://localhost:3002/mentor/team";
+        var url = "http://localhost:3010/mentor/team";
         var hpromise = $http.post(url, $scope.jsonObj);
 
         hpromise.then(function (response) {

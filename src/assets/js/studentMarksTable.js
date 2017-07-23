@@ -21,7 +21,7 @@ app.controller("studentMarksTable", function ($scope, $location, $http, $cookies
 
         $scope.jsonObject = { "studentId": $cookies.get('userId') }
 
-        var url = "http://localhost:3002/studentMarks";
+        var url = "http://localhost:3010/studentMarks";
         var hpromise = $http.post(url, $scope.jsonObject);
 
         hpromise.then(function (response) {

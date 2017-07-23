@@ -31,7 +31,7 @@ app.controller("studentFeedbackForm", function ($scope, $location, $http, $cooki
       "review": "feedbackData.comment"
     });
 
-    var url = "http://localhost:3002/studentFeedback";
+    var url = "http://localhost:3010/studentFeedback";
     var hpromise = $http.post(url, $scope.feedbackData);
 
     hpromise.then(function (response) {

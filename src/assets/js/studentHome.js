@@ -32,7 +32,7 @@ app.controller("studentHome", function ($scope, $location, $cookies, $http) {
 
         $scope.jsonObject = { "studentId": $cookies.get('userId') }
 
-        var url = "http://localhost:3002/student";
+        var url = "http://localhost:3010/student";
         var hpromise = $http.post(url, $scope.jsonObject);
 
         hpromise.then(function (response) {
