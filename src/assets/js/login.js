@@ -19,13 +19,17 @@ app.controller("login", function($scope, $location, $http, $cookies) {
         
         hpromise.then(function(response) 
         {
-            console.log(response.data[0].mentorId);
+        //    console.log(response.data[0].mentorId);
             //routing according to login
               if(response.data.length>0)
               {
                   if($scope.data.result==1)
                   {
                     $location.path("/adminHome");
+
+                    $cookies.put('userId', response.data[0].adminId);
+                    $cookies.put('adminUserName', response.data[0].adminUsername);
+
                   }
                   else if($scope.data.result==2)
                   {
@@ -34,7 +38,7 @@ app.controller("login", function($scope, $location, $http, $cookies) {
                   else if($scope.data.result==3)
                   {
                     $location.path("/mentorHome");
-                    
+       
                     $cookies.put('userId', response.data[0].mentorId);
                     $cookies.put('mentorUserName', response.data[0].mentorUsername);
                   }

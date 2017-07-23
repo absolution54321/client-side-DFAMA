@@ -1,6 +1,6 @@
 var app = angular.module("app");
 
-app.controller("adminHome", function($scope,$location) {
+app.controller("adminHome", function($scope,$location,$cookies) {
 
 $scope.custom = true;
 $scope.custom1 = true;
@@ -12,13 +12,25 @@ $scope.toggleData = function(){
     $scope.custom1 = $scope.custom1 === false ? true : false;
 };
 
+$scope.toggleData1 = function(){
+    $scope.custom1 = $scope.custom1 === false ? true : false;
+}
 
- $scope.goToForum=function(){
+
+    $scope.goToForum=function(){
         $location.path("/mentorDetails");
     };
 
     $scope.goToMentorDetails=function(){
-        $location.path("/mentor");
+        $location.path("/mentorDetails");
+    };
+
+    $scope.listItemClicked =function(event){
+        var id = event.target.id;
+        console.log(id); 
+        $cookies.put('listItemClicked',id);
+                $location.path("/adminDisplaySpecificMarks");
+
     };
 
     

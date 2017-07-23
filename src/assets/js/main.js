@@ -50,6 +50,16 @@ app.config(function($routeProvider) {
         "controller": "adminHome"
     });
 
+      $routeProvider.when("/mentorDetails", {
+        "templateUrl": "./src/views/mentorDetails.html",
+        "controller": "mentorDetails"
+    });
+
+     $routeProvider.when("/adminDisplaySpecificMarks", {
+        "templateUrl": "./src/views/adminDisplaySpecificMarks.html",
+        "controller": "adminDisplaySpecificMarks"
+    });
+
 
     //DEMO PURPOSE
      $routeProvider.when("/studentHome", {
