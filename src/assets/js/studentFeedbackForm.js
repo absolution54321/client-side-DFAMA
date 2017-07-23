@@ -19,7 +19,7 @@ app.controller("studentFeedbackForm", function ($scope, $location, $http, $cooki
   $scope.submitFeedback = function () {
 
     $scope.feedbackData = {};
-    $scope.feedbackData.push({
+     $scope.input = {
       "sid": "feedbackData.studentId",
       "mid": "201",
       "one": "feedbackData.1",
@@ -29,10 +29,10 @@ app.controller("studentFeedbackForm", function ($scope, $location, $http, $cooki
       "five": "feedbackData.5",
       "six": "feedbackData.6",
       "review": "feedbackData.comment"
-    });
+    };
 
     var url = "http://localhost:3010/studentFeedback";
-    var hpromise = $http.post(url, $scope.feedbackData);
+    var hpromise = $http.post(url, $scope.input);
 
     hpromise.then(function (response) {
       console.log(response);
