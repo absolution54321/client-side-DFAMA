@@ -1,7 +1,7 @@
 var app = angular.module("app", ["ngRoute", "ngCookies"]); // ngCookies Dependency
 
 
-app.config(function($routeProvider) {
+app.config(function ($routeProvider) {
 
     $routeProvider.otherwise("/");
 
@@ -9,8 +9,8 @@ app.config(function($routeProvider) {
         "templateUrl": "./src/views/login.html",
         "controller": "login"
     });
-    
-   
+
+
     //MENTOR RELATED ROUTES
     $routeProvider.when("/mentorHome", {
         "templateUrl": "./src/views/mentorHome.html",
@@ -29,7 +29,7 @@ app.config(function($routeProvider) {
 
 
     // Student Related Routes
-     $routeProvider.when("/studentHome", {
+    $routeProvider.when("/studentHome", {
         "templateUrl": "./src/views/studentHome.html",
         "controller": "studentHome"
     });
@@ -39,7 +39,12 @@ app.config(function($routeProvider) {
         "controller": "studentMarksTable"
     });
 
-     $routeProvider.when("/studentFeedbackForm", {
+    $routeProvider.when("/studentAgenda", {
+        "templateUrl": "./src/views/studentAgenda.html",
+        "controller": "studentAgenda"
+    });
+
+    $routeProvider.when("/studentFeedbackForm", {
         "templateUrl": "./src/views/studentFeedbackForm.html",
         "controller": "studentFeedbackForm"
     });
@@ -52,13 +57,13 @@ app.config(function($routeProvider) {
 
 
     //DEMO PURPOSE
-     $routeProvider.when("/studentHome", {
+    $routeProvider.when("/studentHome", {
         "templateUrl": "./src/views/studentHome.html",
         "controller": "studentHome"
     });
 
     //ABOUT US
-     $routeProvider.when("/aboutUs", {
+    $routeProvider.when("/aboutUs", {
         "templateUrl": "./src/views/aboutUs.html",
         "controller": "aboutUs"
     });
@@ -66,16 +71,13 @@ app.config(function($routeProvider) {
 
 });
 
-app.run(function($location, $rootScope, $cookies, $http)
-{
-    $rootScope.$on("$locationChangeStart", function(event, next, current)
-    {
+app.run(function ($location, $rootScope, $cookies, $http) {
+    $rootScope.$on("$locationChangeStart", function (event, next, current) {
         console.log(new Date());
         var userId = $cookies.getObject('userId');
 
-        if(userId == undefined)
-            {
-                $location.path("/");
-            }
+        if (userId == undefined) {
+            $location.path("/");
+        }
     });
 });
