@@ -20,7 +20,7 @@ $scope.toggleData1 = function(){
 
 
 $scope.goToForum=function(){
-        $location.path("/student");
+        $location.path("/mentorDetails");
 };
 
 $scope.goToMentorDetails=function(){

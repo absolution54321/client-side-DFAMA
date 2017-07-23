@@ -65,6 +65,10 @@ app.config(function ($routeProvider) {
         "controller": "adminDisplaySpecificMarks"
     });
 
+    $routeProvider.when("/adminModifyDetails", {
+        "templateUrl": "./src/views/adminModifyDetails.html",
+        "controller": "adminModifyDetails"
+    });
 
     //DEMO PURPOSE
     $routeProvider.when("/studentHome", {
