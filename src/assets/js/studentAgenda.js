@@ -20,7 +20,7 @@ app.controller("studentAgenda", function ($scope, $window, $compile, $filter, $h
     $scope.agendaInit = function () {
         $scope.jsonObj = { "studentId": $cookies.get('userId') };
 
-        var url = "http://localhost:3002/student/agendaInit";
+        var url = "http://localhost:3010/student/agendaInit";
         var hpromise = $http.post(url, $scope.jsonObj);
 
         hpromise.then(function (response) {

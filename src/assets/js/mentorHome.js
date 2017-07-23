@@ -29,7 +29,7 @@ app.controller("mentorHome", function($scope, $window, $cookies, $http, $locatio
         
         $scope.jsonObject = { "mentorId": $cookies.get('userId') }
         
-        var url = "http://localhost:3002/mentor";
+        var url = "http://localhost:3010/mentor";
         var hpromise = $http.post(url, $scope.jsonObject);
         
         hpromise.then(function(response) 
