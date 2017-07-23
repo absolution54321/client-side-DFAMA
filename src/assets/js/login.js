@@ -14,7 +14,7 @@ app.controller("login", function($scope, $location, $http, $cookies) {
                           "UserType":$scope.data.result
                          };
         
-        var url = "http://localhost:3002/";
+        var url = "http://localhost:3010/";
         var hpromise = $http.post(url, $scope.jsonObject);
         
         hpromise.then(function(response) 

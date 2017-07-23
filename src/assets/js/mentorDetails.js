@@ -24,7 +24,7 @@ $scope.goToForum=function(){
 };
 
 $scope.goToMentorDetails=function(){
-        $location.path("/mentor");
+        $location.path("/mentorDetails");
 };
 
 $scope.loadAllMentorsDetailsForAdminLogin = function(){
@@ -48,5 +48,7 @@ $scope.loadAllMentorsDetailsForAdminLogin = function(){
                 $location.path("/adminDisplaySpecificMarks");
 
     };
-
+  $scope.go = function(){
+        $location.path("/adminHome");
+    };
 });

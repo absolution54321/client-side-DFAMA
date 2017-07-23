@@ -56,4 +56,8 @@ $scope.toggleData1 = function(){
 
     };
 
+      $scope.goHome = function(){
+        $location.path("/adminHome");
+    };
+
 });
