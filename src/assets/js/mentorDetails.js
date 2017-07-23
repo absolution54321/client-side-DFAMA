@@ -51,4 +51,11 @@ $scope.loadAllMentorsDetailsForAdminLogin = function(){
   $scope.go = function(){
         $location.path("/adminHome");
     };
+
+     $scope.performLogOut = function(){
+        $cookies.remove("userId");
+        $cookies.remove("mentorUserName");
+        $location.path("/");
+    };
+
 });

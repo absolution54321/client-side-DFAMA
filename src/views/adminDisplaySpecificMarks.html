@@ -1,12 +1,12 @@
 <div class="wrap">
-  <nav class="nav-bar navbar-inverse" role="navigation">
+   <nav class="nav-bar navbar-inverse" role="navigation">
       <div id ="top-menu" class="container-fluid active">
-          <a class="navbar-brand" href="#">Admin</a>
+          <a class="navbar-brand" href="#" style="color: aliceblue;">DAC Forum and Mentor Assessment</a>
           <ul class="nav navbar-nav">        
               <form id="qform" class="navbar-form pull-left" role="search">
-                 <input type="text" class="form-control" placeholder="Search" />                        
-               </form>
-              
+                 <!-- <input type="text" class="form-control" placeholder="Search" /> -->
+                 <button type="button" class="btn btn-outline-info" ng-click="performLogOut()">Logout</button>
+               </form>      
           </ul>
       </div>      
   </nav>
@@ -18,7 +18,7 @@
             <div class="link" ng-click="goHome();"><i class="	glyphicon glyphicon-home"></i>Home</div>
           </li>   
           
-          
+
           <li class="nav-header">
             <div class="link" ng-click="goToForum();"><i class="fa fa-lg fa-facebook"></i>Forum</i></div>
 
