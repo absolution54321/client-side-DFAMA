@@ -53,6 +53,14 @@ app.controller("mentorHome", function($scope, $window, $cookies, $http, $locatio
             });        
  };  
 
+    $scope.notify = function()
+    {
+        $("#notificationId").fadeIn(2000, function(){
+        $("#notificationId").fadeOut(5000);
+    });
+
+    };
+
     $scope.performLogOut = function(){
         $cookies.remove("userId");
         $cookies.remove("mentorUserName");
