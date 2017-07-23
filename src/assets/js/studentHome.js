@@ -4,7 +4,7 @@ var app = angular.module("app");
 
 
 
-app.controller("studentHome", function($scope,$location) {
+app.controller("studentHome", function($scope,$location, $cookies, $http) {
 
     $scope.goToStudentAgendaPage=function(){
           $location.path("/page2");
@@ -18,13 +18,20 @@ $scope.goToStudentMarksTablePage=function(){
   
   $scope.goTostudentFeedbackForm=function(){
       $location.path("/studentFeedbackForm");
-<<<<<<< HEAD
-  }
+  };
 
-  $scope.studentInit = function (){
+  $scope.performLogOut = function(){
+        $cookies.remove("mentorId");
+        $cookies.remove("mentorUserName");
+        $location.path("/");
+    };
 
+    $scope.studentInit = function()
+    {
+        //$scope.mentorData.id = $cookies.get('mentor');
+        //console.log("Hi");   
         
-        $scope.jsonObject = { "studentId": $cookies.get('studentId') }
+        $scope.jsonObject = { "studentId": $cookies.get('userId') }
         
         var url = "http://localhost:3002/student";
         var hpromise = $http.post(url, $scope.jsonObject);
@@ -33,6 +40,7 @@ $scope.goToStudentMarksTablePage=function(){
         {
             //routing according to login
             console.log(response);
+            $scope.studentData.id = $cookies.get('userId');
             $scope.studentData.userName = $cookies.get('studentUserName');
             $scope.studentData.name = response.data[0].name;
             $scope.studentData.rank = response.data[0].rank;
@@ -48,7 +56,6 @@ $scope.goToStudentMarksTablePage=function(){
             $scope.studentData.batch = response.data[0].batch;
             $scope.studentData.state = response.data[0].state;
             $scope.studentData.parentContact = response.data[0].parentContact;
-            
 
 
         }).catch(function(err) 
@@ -56,21 +63,6 @@ $scope.goToStudentMarksTablePage=function(){
               console.log(err);
             });        
  };  
-
-    
-  
-
-
-
-=======
-  };
-
-  $scope.performLogOut = function(){
-        $cookies.remove("mentorId");
-        $cookies.remove("mentorUserName");
-        $location.path("/");
-    };
->>>>>>> fab790ba29992b9f0bdf6ec33d35870f2a34b143
 });
 
 
