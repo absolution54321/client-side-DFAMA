@@ -15,6 +15,12 @@ app.controller("teamPerformance", function($scope, $window)
     $scope.goTeam = function()
     {
         $window.location.href = "http://localhost:3000/#!/teamPerformance";
-    }
+    };
+
+    $scope.performLogOut = function(){
+        $cookies.remove("userId");
+        $cookies.remove("mentorUserName");
+        $location.path("/");
+    };
 
 });
