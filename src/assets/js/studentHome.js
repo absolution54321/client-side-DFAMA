@@ -18,6 +18,7 @@ $scope.goToStudentMarksTablePage=function(){
   
   $scope.goTostudentFeedbackForm=function(){
       $location.path("/studentFeedbackForm");
+<<<<<<< HEAD
   }
 
   $scope.studentInit = function (){
@@ -61,6 +62,15 @@ $scope.goToStudentMarksTablePage=function(){
 
 
 
+=======
+  };
+
+  $scope.performLogOut = function(){
+        $cookies.remove("mentorId");
+        $cookies.remove("mentorUserName");
+        $location.path("/");
+    };
+>>>>>>> fab790ba29992b9f0bdf6ec33d35870f2a34b143
 });
 
 

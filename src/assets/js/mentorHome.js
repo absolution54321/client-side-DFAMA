@@ -1,7 +1,7 @@
 var app = angular.module("app");
 
 
-app.controller("mentorHome", function($scope, $window, $cookies, $http)
+app.controller("mentorHome", function($scope, $window, $cookies, $http, $location)
 {
     // Empty Object for View
     $scope.mentorData = {};
@@ -24,10 +24,10 @@ app.controller("mentorHome", function($scope, $window, $cookies, $http)
     // Will be Called when /mentorHome is initialized
     $scope.mentorInit = function()
     {
-        $scope.mentorData.id = $cookies.get('mentor');
-        console.log("Hi");   
+        //$scope.mentorData.id = $cookies.get('mentor');
+        //console.log("Hi");   
         
-        $scope.jsonObject = { "mentorId": $cookies.get('mentorId') }
+        $scope.jsonObject = { "mentorId": $cookies.get('userId') }
         
         var url = "http://localhost:3010/mentor";
         var hpromise = $http.post(url, $scope.jsonObject);
@@ -36,6 +36,7 @@ app.controller("mentorHome", function($scope, $window, $cookies, $http)
         {
             //routing according to login
             console.log(response);
+            $scope.mentorData.id = $cookies.get('userId');
             $scope.mentorData.userName = $cookies.get('mentorUserName');
             $scope.mentorData.name = response.data[0].mentorName;
             $scope.mentorData.yoe = response.data[0].yearOfExperience;
@@ -51,6 +52,12 @@ app.controller("mentorHome", function($scope, $window, $cookies, $http)
               console.log(err);
             });        
  };  
+
+    $scope.performLogOut = function(){
+        $cookies.remove("userId");
+        $cookies.remove("mentorUserName");
+        $location.path("/");
+    };
 
 
 });

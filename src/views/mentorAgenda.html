@@ -5,7 +5,7 @@
           <ul class="nav navbar-nav">        
               <form id="qform" class="navbar-form pull-left" role="search">
                  <input type="text" class="form-control" placeholder="Search" />
-                 <button type="submit">Change Page</button>
+                 <button type="button" class="btn btn-outline-info" ng-click="performLogOut()">Logout</button>
                </form>
               <li class="dropdown movable">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="caret"></span><span class="fa fa-4x fa-child"></span></a>
@@ -62,10 +62,10 @@
                     <label >Agenda:</label>
                     <div class="row">
                     
-                    <textarea class="form-control col-sm-3" placeholder="agenda for today.."></textarea>
+                    <textarea class="form-control col-sm-3" placeholder="agenda for today.." ng-model="posts.agendaText"></textarea>
                     <label style="margin-top: 1%;">Schedule Date:</label>
-                    <input type="date" class="form-control">
-                    <button class="btn btn-primary btn-block" style="margin-top: 1%;" type="submit">
+                    <input type="date" class="form-control" ng-model="posts.agendaDate">
+                    <button class="btn btn-primary btn-block" style="margin-top: 1%;" type="submit" ng-click="setAgenda()">
                                 Set
                     </button>
                     </div>
