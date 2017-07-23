@@ -73,15 +73,20 @@
                 
             </div>
             
-            <div class="row">
+            <div class="row" ng-init="agendaInit()">
                 
                 <div class="jumbotron form-group list-group">
                             
                     <label >Previous:</label>
                     
-                    <div class="list-group-item">
-                        
-                        <textarea class="form-control" placeholder="previous agenda" disabled></textarea>
+                    <div class="list-group-item" ng-repeat="item in postList">
+                        <div class="row">
+                        <textarea class="form-control col-sm-6" placeholder="{{item.agendaText}}" disabled></textarea>
+                        <label style="margin-top: 1%; color:dodgerblue;">
+                            Scheduled Time: {{item.agendaDate}}
+                        </label>
+                        <br>
+                        <!-- <p>{{item.agendaText}}</p> -->
                         <button class="btn btn-warning" style="margin-top: 1%;" type="submit">
                                         Edit
                         </button>
@@ -89,19 +94,7 @@
                         <button class="btn btn-danger" style="margin-top: 1%;" type="submit">
                                         Delete
                         </button>
-                        
-                    </div>
-                    
-                    <div class="list-group-item">
-                        
-                        <textarea class="form-control" placeholder="previous ke previous ka agenda" disabled></textarea>
-                        <button class="btn btn-warning" style="margin-top: 1%;" type="submit">
-                                    Edit
-                        </button>
-                        <button class="btn btn-danger" style="margin-top: 1%;" type="submit">
-                                    Delete
-                        </button>
-                    
+                        </div>
                     </div>
                     
                 </div>
