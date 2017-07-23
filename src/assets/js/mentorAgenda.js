@@ -38,7 +38,7 @@ app.controller("mentorAgenda", function($scope, $window,$compile, $filter, $http
                             "agendaDate":$scope.posts.agendaDate
                         };
 
-        var url = "http://localhost:3010/mentor/agenda";
+        var url = "http://localhost:3002/mentor/agenda";
         var hpromise = $http.post(url, $scope.jsonObj);
         
         hpromise.then(function(response) 
@@ -56,7 +56,7 @@ app.controller("mentorAgenda", function($scope, $window,$compile, $filter, $http
     {
         $scope.jsonObj = { "mentorId": $cookies.get('userId') };
 
-        var url = "http://localhost:3010/mentor/agendaInit";
+        var url = "http://localhost:3002/mentor/agendaInit";
         var hpromise = $http.post(url, $scope.jsonObj);
         
         hpromise.then(function(response) 
