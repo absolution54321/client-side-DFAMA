@@ -1,8 +1,9 @@
 var app = angular.module("app");
 
-app.controller("adminHome", function($scope,$location,$cookies) {
 
-$scope.custom = true;
+app.controller("adminUploadExcelSheet", function($scope,$location,$cookies,$http) {
+
+    $scope.custom = true;
 $scope.custom1 = true;
 $scope.toggleMarks = function(){
     $scope.custom = $scope.custom === false ? true : false;
@@ -42,8 +43,6 @@ $scope.toggleData1 = function(){
         $location.path("/adminUploadExcelSheet");
 
        }
-
-
     };
 
     $scope.goHome = function(){
@@ -54,5 +53,7 @@ $scope.toggleData1 = function(){
         $cookies.remove("userId");
         $cookies.remove("mentorUserName");
         $location.path("/");
-    };   
+    };
+
+
 });

@@ -70,6 +70,12 @@ app.config(function ($routeProvider) {
         "controller": "adminModifyDetails"
     });
 
+     $routeProvider.when("/adminUploadExcelSheet", {
+        "templateUrl": "./src/views/adminUploadExcelSheet.html",
+        "controller": "adminUploadExcelSheet"
+    });
+
+
     //DEMO PURPOSE
     $routeProvider.when("/studentHome", {
         "templateUrl": "./src/views/studentHome.html",

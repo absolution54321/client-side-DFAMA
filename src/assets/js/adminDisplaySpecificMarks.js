@@ -65,6 +65,15 @@ $scope.toggleData1 = function(){
         $cookies.remove("mentorUserName");
         $location.path("/");
     };
+$scope.addModifylistItemClicked =function(event){
+        var id = event.target.id;
+       if(id == '11'){
+        $location.path("/adminModifyDetails");
+       }else
+       {
+        $location.path("/adminUploadExcelSheet");
 
+       }
+    };
 
 });
