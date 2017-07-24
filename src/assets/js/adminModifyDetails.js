@@ -52,8 +52,9 @@ $scope.toggleData1 = function(){
     };
 
      $scope.performLogOut = function(){
-        $cookies.remove("userId");
-        $cookies.remove("mentorUserName");
+        $cookies.remove("adminId");
+        $cookies.remove("type");
+        $cookies.remove("adminUserName");
         $location.path("/");
     };
 

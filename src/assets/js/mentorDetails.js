@@ -53,7 +53,8 @@ $scope.loadAllMentorsDetailsForAdminLogin = function(){
     };
 
      $scope.performLogOut = function(){
-        $cookies.remove("userId");
+        $cookies.remove("mentorId");
+        $cookies.remove("type");
         $cookies.remove("mentorUserName");
         $location.path("/");
     };

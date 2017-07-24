@@ -29,7 +29,8 @@ app.controller("login", function($scope, $location, $http, $cookies) {
                   {
                     $location.path("/adminHome");
 
-                    $cookies.put('userId', response.data[0].adminId);
+                    $cookies.put('adminId', response.data[0].adminId);
+                    $cookies.put('type', $scope.data.result);
                     $cookies.put('adminUserName', response.data[0].adminUsername);
 
                   }
@@ -37,7 +38,8 @@ app.controller("login", function($scope, $location, $http, $cookies) {
                   {
                     $location.path("/studentHome");
                     
-                    $cookies.put('userId', response.data[0].studentId);
+                    $cookies.put('studentId', response.data[0].studentId);
+                    $cookies.put('type', $scope.data.result);
                     $cookies.put('studentUserName', response.data[0].studentUsername);
                     console.log($cookies);
 
@@ -46,7 +48,8 @@ app.controller("login", function($scope, $location, $http, $cookies) {
                   {
                     $location.path("/mentorHome");
        
-                    $cookies.put('userId', response.data[0].mentorId);
+                    $cookies.put('mentorId', response.data[0].mentorId);
+                    $cookies.put('type', $scope.data.result);
                     $cookies.put('mentorUserName', response.data[0].mentorUsername);
                   }
               }

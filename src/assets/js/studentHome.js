@@ -30,7 +30,7 @@ app.controller("studentHome", function ($scope, $location, $cookies, $http) {
         //$scope.mentorData.id = $cookies.get('mentor');
         //console.log("Hi");   
 
-        $scope.jsonObject = { "studentId": $cookies.get('userId') }
+        $scope.jsonObject = { "studentId": $cookies.get('studentId') }
 
         var url = "http://localhost:3010/student";
         var hpromise = $http.post(url, $scope.jsonObject);
@@ -38,7 +38,7 @@ app.controller("studentHome", function ($scope, $location, $cookies, $http) {
         hpromise.then(function (response) {
             //routing according to login
             console.log(response);
-            $scope.studentData.id = $cookies.get('userId');
+            $scope.studentData.id = $cookies.get('studentId');
             $scope.studentData.userName = $cookies.get('studentUserName');
             $scope.studentData.name = response.data[0].name;
             $scope.studentData.rank = response.data[0].rank;
@@ -61,7 +61,8 @@ app.controller("studentHome", function ($scope, $location, $cookies, $http) {
         });
     };
     $scope.performLogOut = function () {
-        $cookies.remove("userId");
+        $cookies.remove("studentId");
+        $cookies.remove("type");
         $cookies.remove("studentUserName");
         $location.path("/");
     };

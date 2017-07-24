@@ -27,7 +27,7 @@ app.controller("mentorHome", function($scope, $window, $cookies, $http, $locatio
         //$scope.mentorData.id = $cookies.get('mentor');
         //console.log("Hi");   
         
-        $scope.jsonObject = { "mentorId": $cookies.get('userId') }
+        $scope.jsonObject = { "mentorId": $cookies.get('mentorId') }
         
         var url = "http://localhost:3010/mentor";
         var hpromise = $http.post(url, $scope.jsonObject);
@@ -36,7 +36,7 @@ app.controller("mentorHome", function($scope, $window, $cookies, $http, $locatio
         {
             //routing according to login
             console.log(response);
-            $scope.mentorData.id = $cookies.get('userId');
+            $scope.mentorData.id = $cookies.get('mentorId');
             $scope.mentorData.userName = $cookies.get('mentorUserName');
             $scope.mentorData.name = response.data[0].mentorName;
             $scope.mentorData.yoe = response.data[0].yearOfExperience;
@@ -62,7 +62,8 @@ app.controller("mentorHome", function($scope, $window, $cookies, $http, $locatio
     };
 
     $scope.performLogOut = function(){
-        $cookies.remove("userId");
+        $cookies.remove("mentorId");
+        $cookies.remove("type");
         $cookies.remove("mentorUserName");
         $location.path("/");
     };

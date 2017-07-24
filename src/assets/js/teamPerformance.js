@@ -17,7 +17,7 @@ app.controller("teamPerformance", function ($scope, $window, $http, $cookies, $l
     };
 
     $scope.teamInit = function () {
-        $scope.jsonObj = { "mentorId": $cookies.get('userId') };
+        $scope.jsonObj = { "mentorId": $cookies.get('mentorId') };
 
         //console.log($scope.jsonObj.mentorId);
 
@@ -46,7 +46,8 @@ app.controller("teamPerformance", function ($scope, $window, $http, $cookies, $l
     };
 
     $scope.performLogOut = function () {
-        $cookies.remove("userId");
+        $cookies.remove("mentorId");
+        $cookies.remove("type");
         $cookies.remove("mentorUserName");
         $location.path("/");
     };

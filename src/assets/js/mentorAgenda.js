@@ -28,7 +28,7 @@ app.controller("mentorAgenda", function ($scope, $window, $compile, $filter, $ht
         $scope.postList.push({ "agendaText": $scope.posts.agendaText, "agendaDate": $scope.posts.agendaDate });
 
         $scope.jsonObj = {
-            "mentorId": $cookies.get('userId'),
+            "mentorId": $cookies.get('mentorId'),
             "agendaText": $scope.posts.agendaText,
             "agendaDate": $scope.posts.agendaDate
         };
@@ -46,7 +46,7 @@ app.controller("mentorAgenda", function ($scope, $window, $compile, $filter, $ht
     };
 
     $scope.agendaInit = function () {
-        $scope.jsonObj = { "mentorId": $cookies.get('userId') };
+        $scope.jsonObj = { "mentorId": $cookies.get('mentorId') };
 
         var url = "http://localhost:3010/mentor/agendaInit";
         var hpromise = $http.post(url, $scope.jsonObj);
@@ -70,7 +70,8 @@ app.controller("mentorAgenda", function ($scope, $window, $compile, $filter, $ht
     };
 
     $scope.performLogOut = function () {
-        $cookies.remove("userId");
+        $cookies.remove("mentorId");
+        $cookies.remove("type");
         $cookies.remove("mentorUserName");
         $location.path("/");
     };

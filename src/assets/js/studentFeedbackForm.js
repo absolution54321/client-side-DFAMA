@@ -13,7 +13,8 @@ app.controller("studentFeedbackForm", function ($scope, $location, $http, $cooki
   };
 
   $scope.performLogOut = function () {
-    $cookies.remove("userId");
+    $cookies.remove("studentId");
+    $cookies.remove("type");
     $cookies.remove("studentUserName");
     $location.path("/");
   };
