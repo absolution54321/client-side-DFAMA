@@ -1,4 +1,4 @@
-var app = angular.module("app", ["ngRoute", "ngCookies", "angular-growl"]); // [] Dependency
+var app = angular.module("app", ["ngRoute", "ngCookies"]); // [] Dependency
 
 
 app.config(function ($routeProvider) {
@@ -91,7 +91,7 @@ app.config(function ($routeProvider) {
 
 });
 
-app.run(function ($location, $rootScope, $cookies, $http, $window, growl) {
+app.run(function ($location, $rootScope, $cookies, $http, $window) {
     $rootScope.$on("$locationChangeStart", function (event, next, current) {
         console.log(new Date());
         var adminId = $cookies.getObject('adminId');
