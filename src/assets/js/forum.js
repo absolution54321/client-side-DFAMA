@@ -13,6 +13,51 @@ app.controller("forum", function ($scope, $window, $compile, $filter, $http, $co
             $location.path("/mentorHome");
     };
 
+    $scope.currentQuestion={};
+    $scope.unansweredQuestions={};
+    $scope.answeredQuestions={};
 
+    $scope.postQuestion = function(){
+
+    };
+
+    $scope.answerQuestion = function(){
+
+    };
+
+    $scope.addToAnswers = function(){
+
+    };
+
+    $scope.postComment = function(){
+
+    };
+
+    $scope.addToComments = function(){
+
+    };
+
+    $scope.searchTagwise = function(){
+
+    };
+
+    $scope.searchDatewise = function(){
+
+    };
+
+    $scope.performLogOut = function () {
+        $cookies.remove("studentId");
+        $cookies.remove("type");
+        $cookies.remove("studentUserName");
+        $location.path("/");
+    };
+
+    $scope.forumInit = function(){
+
+    };
+
+    $scope.getforumUserName = function(){
+
+    };
 
 }); 
