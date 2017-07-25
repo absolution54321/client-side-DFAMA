@@ -6,11 +6,15 @@ var app = angular.module("app");
 
 app.controller("studentHome", function ($scope, $location, $cookies, $http) {
 
+    $scope.studentData = {};
+
     $scope.goToStudentAgendaPage = function () {
         $location.path("/studentAgenda");
     };
 
-    $scope.studentData = {};
+    $scope.goToStudentHomePage = function () {
+        $location.path("/studentHome");
+    };
 
     $scope.goToStudentMarksTablePage = function () {
         $location.path("/studentMarksTable");
@@ -20,6 +24,10 @@ app.controller("studentHome", function ($scope, $location, $cookies, $http) {
         $location.path("/studentFeedbackForm");
     };
 
+    $scope.goToForum = function () {
+        $location.path("/forum");
+    };
+    
     $scope.performLogOut = function () {
         $cookies.remove("mentorId");
         $cookies.remove("mentorUserName");
