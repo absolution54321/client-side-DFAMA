@@ -56,6 +56,7 @@ app.controller("studentMarksTable", function ($scope, $location, $http, $cookies
     };
     $scope.performLogOut = function () {
         $cookies.remove("studentId");
+        $cookies.remove("mentorId");
         $cookies.remove("type");
         $cookies.remove("studentUserName");
         $location.path("/");

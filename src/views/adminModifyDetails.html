@@ -61,7 +61,7 @@
   
   <!--Body content-->
   <div class="content">
-    <div class="top-bar" style="    width: 100%;">       
+    <div class="top-bar" style="width: 100%;">       
       <a href="#menu" class="side-menu-link burger"> 
         <span class='burger_inside' id='bgrOne'></span>
         <span class='burger_inside' id='bgrTwo'></span>
@@ -69,8 +69,35 @@
       </a>      
     </div>
     <section class="content-inner">
-      <h2>Sample</h2>
-           
+      <div class="row jumbotron" style="padding-left:10%;">
+<div class=" row form-group" >
+  <div class="col-sm-4">
+    <label for="ex3">Enter The Student Id</label>
+    <input class="form-control" id="ex1" type="text" ng-model="data.id">
+  </div>
+  </div>
+  <div class="row form-group">
+  <div class="col-sm-4">
+    <label for="ex3">Old Password</label>
+    <input class="form-control" id="ex2" type="text" ng-model="data.oldPwd">
+  </div>
+  </div>
+  <div class="row form-group">
+  <div class="col-sm-4">
+    <label for="ex3">New Password</label>
+    <input class="form-control" id="ex3" type="text" ng-model="data.newPwd">
+  </div>
+  </div>
+<div class="row form-group">
+  <div class="col-sm-4">
+    <label for="ex3">Confirm Password</label>
+    <input class="form-control" id="ex3" type="text" ng-model="data.conPwd">
+  </div>
+</div>
+
+<button type="button" class="btn btn-success" style="margin-left:12%;" ng-click="changePassword();">Change</button>
+
+      </div>
     </section>
   </div>  
   
