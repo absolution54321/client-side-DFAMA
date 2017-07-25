@@ -9,9 +9,22 @@ app.controller("studentMarksTable", function ($scope, $location, $http, $cookies
     $scope.goToStudentAgendaPage = function () {
         $location.path("/studentAgenda");
     };
+
+    $scope.goToStudentHomePage = function () {
+        $location.path("/studentHome");
+    };
+
+    $scope.goToStudentMarksTablePage = function () {
+        $location.path("/studentMarksTable");
+    };
+
     $scope.goTostudentFeedbackForm = function () {
         $location.path("/studentFeedbackForm");
-    }
+    };
+
+    $scope.goToForum = function () {
+        $location.path("/forum");
+    };
 
 
     // Will be Called when /studentMarksTable is initialized
@@ -19,7 +32,7 @@ app.controller("studentMarksTable", function ($scope, $location, $http, $cookies
         // $scope.studentMarks.id = $cookies.get('student');
         // console.log("student");   
 
-        $scope.jsonObject = { "studentId": $cookies.get('userId') }
+        $scope.jsonObject = { "studentId": $cookies.get('studentId') }
 
         var url = "http://localhost:3010/studentMarks";
         var hpromise = $http.post(url, $scope.jsonObject);
@@ -42,7 +55,8 @@ app.controller("studentMarksTable", function ($scope, $location, $http, $cookies
         });
     };
     $scope.performLogOut = function () {
-        $cookies.remove("userId");
+        $cookies.remove("studentId");
+        $cookies.remove("type");
         $cookies.remove("studentUserName");
         $location.path("/");
     };

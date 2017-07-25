@@ -8,6 +8,10 @@ app.controller("studentAgenda", function ($scope, $window, $compile, $filter, $h
         $location.path("/studentAgenda");
     };
 
+    $scope.goToStudentHomePage = function () {
+        $location.path("/studentHome");
+    };
+
     $scope.goToStudentMarksTablePage = function () {
         $location.path("/studentMarksTable");
     };
@@ -16,9 +20,12 @@ app.controller("studentAgenda", function ($scope, $window, $compile, $filter, $h
         $location.path("/studentFeedbackForm");
     };
 
+    $scope.goToForum = function () {
+        $location.path("/forum");
+    };
 
     $scope.agendaInit = function () {
-        $scope.jsonObj = { "studentId": $cookies.get('userId') };
+        $scope.jsonObj = { "studentId": $cookies.get('studentId') };
 
         var url = "http://localhost:3010/student/agendaInit";
         var hpromise = $http.post(url, $scope.jsonObj);
@@ -42,7 +49,8 @@ app.controller("studentAgenda", function ($scope, $window, $compile, $filter, $h
     };
 
     $scope.performLogOut = function () {
-        $cookies.remove("userId");
+        $cookies.remove("studentId");
+        $cookies.remove("type");
         $cookies.remove("studentUserName");
         $location.path("/");
     };
