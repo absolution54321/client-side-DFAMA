@@ -159,5 +159,21 @@ app.run(function ($location, $rootScope, $cookies, $http, $window) {
         if (adminId == undefined && studentId == undefined && mentorId == undefined) {
             $location.path("/");
         }
+
+        if($window.location.href == 'http://localhost:3000/#!/')
+            {
+                if(adminId != undefined)
+                    {
+                        $location.path("/adminHome");
+                    }
+                if(studentId != undefined)
+                    {
+                        $location.path("/studentHome");
+                    }
+                if(mentorId != undefined)
+                    {
+                        $location.path("/mentorHome");
+                    }
+            }
     });
 });
