@@ -5,12 +5,24 @@ app.controller("studentFeedbackForm", function ($scope, $location, $http, $cooki
 
   $scope.feedbackData = {};
   $scope.goToStudentAgendaPage = function () {
-    $location.path("/page2");
-  };
+        $location.path("/studentAgenda");
+    };
 
-  $scope.goToStudentMarksTablePage = function () {
-    $location.path("/studentMarksTable");
-  };
+    $scope.goToStudentHomePage = function () {
+        $location.path("/studentHome");
+    };
+
+    $scope.goToStudentMarksTablePage = function () {
+        $location.path("/studentMarksTable");
+    };
+
+    $scope.goTostudentFeedbackForm = function () {
+        $location.path("/studentFeedbackForm");
+    };
+
+    $scope.goToForum = function () {
+        $location.path("/forum");
+    };
 
   $scope.performLogOut = function () {
     $cookies.remove("studentId");

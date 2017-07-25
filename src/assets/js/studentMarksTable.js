@@ -9,9 +9,22 @@ app.controller("studentMarksTable", function ($scope, $location, $http, $cookies
     $scope.goToStudentAgendaPage = function () {
         $location.path("/studentAgenda");
     };
+
+    $scope.goToStudentHomePage = function () {
+        $location.path("/studentHome");
+    };
+
+    $scope.goToStudentMarksTablePage = function () {
+        $location.path("/studentMarksTable");
+    };
+
     $scope.goTostudentFeedbackForm = function () {
         $location.path("/studentFeedbackForm");
-    }
+    };
+
+    $scope.goToForum = function () {
+        $location.path("/forum");
+    };
 
 
     // Will be Called when /studentMarksTable is initialized

@@ -8,6 +8,10 @@ app.controller("studentAgenda", function ($scope, $window, $compile, $filter, $h
         $location.path("/studentAgenda");
     };
 
+    $scope.goToStudentHomePage = function () {
+        $location.path("/studentHome");
+    };
+
     $scope.goToStudentMarksTablePage = function () {
         $location.path("/studentMarksTable");
     };
@@ -16,6 +20,9 @@ app.controller("studentAgenda", function ($scope, $window, $compile, $filter, $h
         $location.path("/studentFeedbackForm");
     };
 
+    $scope.goToForum = function () {
+        $location.path("/forum");
+    };
 
     $scope.agendaInit = function () {
         $scope.jsonObj = { "studentId": $cookies.get('studentId') };
