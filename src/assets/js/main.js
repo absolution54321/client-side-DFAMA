@@ -102,11 +102,11 @@ app.run(function ($location, $rootScope, $cookies, $http, $window) {
         console.log($window.location.href == 'http://localhost:3000/#!/mentorHome');
 
         if ($window.location.href == 'http://localhost:3000/#!/adminHome'
-            || $window.location.href == 'http://localhost:3000/#!/mentorDetails'
-            || $window.location.href == 'http://localhost:3000/#!/adminDisplaySpecificMarks'
-            || $window.location.href == 'http://localhost:3000/#!/adminDisplaySpecificMarks'
-            || $window.location.href == 'http://localhost:3000/#!/adminModifyDetails'
-            || $window.location.href == 'http://localhost:3000/#!/adminUploadExcelSheet') {
+                || $window.location.href == 'http://localhost:3000/#!/mentorDetails'
+                || $window.location.href == 'http://localhost:3000/#!/adminDisplaySpecificMarks'
+                || $window.location.href == 'http://localhost:3000/#!/adminDisplaySpecificMarks'
+                || $window.location.href == 'http://localhost:3000/#!/adminModifyDetails'
+                || $window.location.href == 'http://localhost:3000/#!/adminUploadExcelSheet') {
             if (adminId == undefined) {
                 if (type == 2) {
                     $location.path("/studentHome");

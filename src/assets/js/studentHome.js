@@ -62,6 +62,7 @@ app.controller("studentHome", function ($scope, $location, $cookies, $http) {
     };
     $scope.performLogOut = function () {
         $cookies.remove("studentId");
+        $cookies.remove("mentorId");
         $cookies.remove("type");
         $cookies.remove("studentUserName");
         $location.path("/");
