@@ -38,22 +38,27 @@
     </nav>
     <aside id="side-menu" class="aside" role="navigation" style="z-index:0">
       <ul class="nav nav-list accordion">
-        <li class="nav-header">
-          <div class="link" ng-click="goToStudentAgendaPage()"><i class="fa fa-lg fa-globe"></i>Agenda<i class="fa fa-chevron-down"></i></div>
-        </li>
 
-        <li class="nav-header">
-          <div class="link"><i class="fa fa-lg fa-users"></i>Feedback<i class="fa fa-chevron-down"></i></div>
-        </li>
+            <li class="nav-header">
+                <div class="link" ng-click="goToStudentHomePage()"><i class="glyphicon glyphicon-home"></i>Home<i class="fa fa-chevron-down"></i></div>
+            </li>
 
-        <li class="nav-header">
-          <div class="link"><i class="fa fa-cloud"></i>Forum<i class="fa fa-chevron-down"></i></div>
-        </li>
+            <li class="nav-header">
+                <div class="link" ng-click="goToStudentAgendaPage()"><i class="fa fa-lg fa-globe"></i>Agenda<i class="fa fa-chevron-down"></i></div>
+            </li>
 
-        <li class="nav-header">
-          <div class="link" ng-click="goToStudentMarksTablePage()"><i class="fa fa-lg fa-map-marker"></i>Marks<i class="fa fa-chevron-down"></i></div>
-        </li>
-      </ul>
+            <li class="nav-header">
+                <div class="link" ng-click="goTostudentFeedbackForm()"><i class="fa fa-lg fa-users"></i>Feedback<i class="fa fa-chevron-down"></i></div>
+            </li>
+
+            <li class="nav-header">
+                <div class="link" ng-click="goToForum()"><i class="fa fa-cloud"></i>Forum<i class="fa fa-chevron-down"></i></div>
+            </li>
+
+            <li class="nav-header">
+                <div class="link" ng-click="goToStudentMarksTablePage()"><i class="fa fa-lg fa-map-marker"></i>Marks<i class="fa fa-chevron-down"></i></div>
+            </li>
+        </ul>
     </aside>
 
     <!--Body content-->

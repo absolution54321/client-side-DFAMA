@@ -88,6 +88,12 @@ app.config(function ($routeProvider) {
         "controller": "aboutUs"
     });
 
+    //Forum route
+    $routeProvider.when("/forum", {
+        "templateUrl": "./src/views/forum.html",
+        "controller": "forum"
+    });
+
 
 });
 
