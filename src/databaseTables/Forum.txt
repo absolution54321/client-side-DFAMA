@@ -1,0 +1,24 @@
+create table Questions
+(questionId int primary key auto_increment,questionText varchar(1000),tag varchar(20),
+studentId varchar(20),answerStatus boolean not null default 0,
+postedDateQue timestamp DEFAULT CURRENT_TIMESTAMP,
+foreign key (studentId) references Student(studentId)
+);
+
+create table Answers
+(answerId int primary key auto_increment,questionId int,
+answerText varchar(1500),mentorId int,
+postedDateAns timestamp DEFAULT CURRENT_TIMESTAMP,
+foreign key (mentorId) references Mentor(mentorId),
+foreign key (questionId) references Questions(questionId));
+
+
+
+create table Comments
+(commentId int primary key auto_increment,
+answerId int,commentText varchar(1000),
+studentId varchar(20),mentorId int,
+postedDateCmt timestamp DEFAULT CURRENT_TIMESTAMP,
+foreign key (answerId) references Answers(answerId),
+foreign key (mentorId) references Mentor(mentorId),
+foreign key (studentId) references Student(studentId));

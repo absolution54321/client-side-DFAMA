@@ -27,7 +27,7 @@
                 <div class="link" ng-click="goHome();"><i class="	glyphicon glyphicon-home"></i>Home</div>
             </li>
             <li class="nav-header">
-                <div class="link" ng-click="goTeam();"><i class="glyphicon glyphicon-stats"></i>Team Performance</div>
+                <div class="link"><i class="glyphicon glyphicon-stats"></i>Team Performance</div>
             </li>
 
             <li class="nav-header">
@@ -46,7 +46,7 @@
     </div>
 
     <!--Body content-->
-    <div class="content">
+    <div class="content" ng-init="calculateTeamPerformance()">
         <!-- <div class="top-bar">       
       <a href="#menu" class="side-menu-link burger"> 
         <span class='burger_inside' id='bgrOne'></span>
@@ -58,48 +58,9 @@
             <div class="jumbotron">
                 <div class="row" id="refIdForContent">
                     <div class=" col-sm-6">
+                     <h2>Team Performance</h2>
+                   <zingchart id="chart1" zc-values="teamPerformanceList" zc-type="bar" zc-width="100%" style="display:block"></zingchart>
 
-                        <blockquote class="my-post-content">
-                            <img src="images.png">
-                        </blockquote>
-                    </div>
-                    <div class="col-sm-6">
-                        <form class="well form-horizontal" action=" " method="post" id="contact_form">
-                            <fieldset>
-
-                                <!-- Form Name -->
-                                <legend>
-                                    <center>
-                                        <h2><b>Team Performance</b></h2>
-                                    </center>
-                                </legend><br>
-
-                                <!-- Text input-->
-
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Team Name</label>
-                                    <div class="col-md-8 inputGroupContainer">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                            <input type="name" class="form-control" ng-model="teamDetails.groupName" disabled>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Text input-->
-
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Team Id</label>
-                                    <div class="col-md-8 inputGroupContainer">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                            <input type="id" class="form-control" ng-model="teamDetails.teamId" disabled>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </form>
                     </div>
                 </div>
 
