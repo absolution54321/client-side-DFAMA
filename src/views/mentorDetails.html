@@ -102,7 +102,6 @@
                             <td>{{item.contactNo}}</td>
                             <td>{{item.mentor_attendance}}</td>
                             <td><button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#myModal">Edit</button></td>
-                            <td><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -115,50 +114,50 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Modal Header</h4>
+                            <h4 class="modal-title">Edit Form</h4>
                         </div>
                         <div class="modal-body">
                             <form>
                                 <div class="form-group">
+                                    <label for="mentorId">Mentor ID:</label>
+                                    <input type="number" class="form-control" id="mentorId" ng-model="modalMentor.mentorId">
+                                </div>
+                                <div class="form-group">
                                     <label for="name">Name:</label>
-                                    <input type="text" class="form-control" id="name" ng-model="mentorDetailsList.teamId">
+                                    <input type="text" class="form-control" id="name" ng-model="modalMentor.mentorName" ng-focus="fetchMentor(this)">
                                 </div>
                                 <div class="form-group">
                                     <label for="yoe">Years of Experience:</label>
-                                    <input type="number" class="form-control" id="yoe" ng-model="mentorDetailsList.yearOfExperience">
-                                </div>
-                                <div class="form-group">
-                                    <label for="mentorId">Mentor ID:</label>
-                                    <input type="number" class="form-control" id="mentorId" ng-model="mentorDetailsList.mentorId">
+                                    <input type="number" class="form-control" id="yoe" ng-model="modalMentor.yearOfExperience">
                                 </div>
                                 <div class="form-group">
                                     <label for="contactNo">Contact No:</label>
-                                    <input type="text" class="form-control" id="contactNo" ng-model="mentorDetailsList.contactNo">
+                                    <input type="text" class="form-control" id="contactNo" ng-model="modalMentor.contactNo">
                                 </div>
                                 <div class="form-group">
                                     <label for="company">Company:</label>
-                                    <input type="text" class="form-control" id="company" ng-model="mentorDetailsList.company">
+                                    <input type="text" class="form-control" id="company" ng-model="modalMentor.company">
                                 </div>
                                 <div class="form-group">
                                     <label for="aoe">Area of Expertise:</label>
-                                    <input type="text" class="form-control" id="aoe" ng-model="mentorDetailsList.areaOfExpertise">
+                                    <input type="text" class="form-control" id="aoe" ng-model="modalMentor.areaOfExpertise">
                                 </div>
                                 <div class="form-group">
                                     <label for="batch">Batch:</label>
-                                    <input type="text" class="form-control" id="batch" ng-model="mentorDetailsList.batch">
+                                    <input type="text" class="form-control" id="batch" ng-model="modalMentor.batch">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email:</label>
-                                    <input type="text" class="form-control" id="email" ng-model="mentorDetailsList.email">
+                                    <input type="text" class="form-control" id="email" ng-model="modalMentor.email">
                                 </div>
                                 <div class="form-group">
                                     <label for="teamId">Team ID:</label>
-                                    <input type="number" class="form-control" id="teamId" ng-model="mentorDetailsList.teamId">
+                                    <input type="number" class="form-control" id="teamId" ng-model="modalMentor.teamId">
                                 </div>
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Set Changes</button>
+                            <button type="button" class="btn btn-primary" ng-click="updateMentor()">Set Changes</button>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
