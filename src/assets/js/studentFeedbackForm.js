@@ -4,25 +4,38 @@ var app = angular.module("app");
 app.controller("studentFeedbackForm", function ($scope, $location, $http, $cookies) {
 
   $scope.feedbackData = {};
+  var mentorid;
+  $scope.getMentorId = function () {
+    $scope.jsonObject = { "studentId": $cookies.get('studentId') };
+    var url = "http://localhost:3010/student";
+    var hpromise = $http.post(url, $scope.jsonObject);
+
+    hpromise.then(function (response) {
+      console.log(response);
+      mentorid = response.data[0].mentorId;
+    }).catch(function (err) {
+      console.log(err);
+    });
+  };
   $scope.goToStudentAgendaPage = function () {
-        $location.path("/studentAgenda");
-    };
+    $location.path("/studentAgenda");
+  };
 
-    $scope.goToStudentHomePage = function () {
-        $location.path("/studentHome");
-    };
+  $scope.goToStudentHomePage = function () {
+    $location.path("/studentHome");
+  };
 
-    $scope.goToStudentMarksTablePage = function () {
-        $location.path("/studentMarksTable");
-    };
+  $scope.goToStudentMarksTablePage = function () {
+    $location.path("/studentMarksTable");
+  };
 
-    $scope.goTostudentFeedbackForm = function () {
-        $location.path("/studentFeedbackForm");
-    };
+  $scope.goTostudentFeedbackForm = function () {
+    $location.path("/studentFeedbackForm");
+  };
 
-    $scope.goToForum = function () {
-        $location.path("/forum");
-    };
+  $scope.goToForum = function () {
+    $location.path("/forum");
+  };
 
   $scope.performLogOut = function () {
     $cookies.remove("studentId");
@@ -32,9 +45,11 @@ app.controller("studentFeedbackForm", function ($scope, $location, $http, $cooki
   };
 
   $scope.submitFeedback = function () {
-     $scope.input = {
+
+    getMentorId();
+    $scope.input = {
       "sid": $scope.feedbackData.studentId,
-      "mid": "201",
+      "mid": mentorid,
       "one": $scope.feedbackData.one,
       "two": $scope.feedbackData.two,
       "three": $scope.feedbackData.three,
