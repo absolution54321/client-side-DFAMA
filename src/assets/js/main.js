@@ -1,4 +1,4 @@
-var app = angular.module("app", ["ngRoute", "ngCookies"]); // [] Dependency
+var app = angular.module("app", ["ngRoute", "ngCookies", "zingchart-angularjs"]); // [] Dependency
 
 
 app.config(function ($routeProvider) {

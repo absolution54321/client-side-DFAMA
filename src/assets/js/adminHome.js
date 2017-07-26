@@ -4,6 +4,9 @@ app.controller("adminHome", function($scope,$location,$cookies) {
 
 $scope.custom = true;
 $scope.custom1 = true;
+
+$scope.myData = [1,4,5,5,10];
+
 $scope.toggleMarks = function(){
     $scope.custom = $scope.custom === false ? true : false;
 };
@@ -14,7 +17,7 @@ $scope.toggleData = function(){
 
 $scope.toggleData1 = function(){
     $scope.custom1 = $scope.custom1 === false ? true : false;
-}
+};
 
 
     $scope.goToForum=function(){
