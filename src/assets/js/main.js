@@ -95,7 +95,7 @@ app.config(function ($routeProvider) {
     });
 
      //ExcelSheet route
-    $routeProvider.when("/forum", {
+    $routeProvider.when("/importData", {
         "templateUrl": "./src/views/importData.html",
         "controller": "importData"
     });
